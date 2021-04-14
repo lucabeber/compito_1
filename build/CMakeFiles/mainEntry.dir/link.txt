@@ -1,0 +1,1 @@
+/bin/x86_64-linux-gnu-g++-9  -g   CMakeFiles/mainEntry.dir/main.cpp.o CMakeFiles/mainEntry.dir/src/pistone.cpp.o  -o mainEntry 
