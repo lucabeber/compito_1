@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/pistone.h
+string
+-
+
+/home/luca/compito_1/src/pistone.cpp
+pistone.h
+/home/luca/compito_1/src/pistone.h
+iostream
+-
+cstring
+-
+
