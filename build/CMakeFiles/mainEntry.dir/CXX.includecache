@@ -10,9 +10,11 @@
 string
 -
 
-/home/luca/compito_1/main.cpp
+/home/luca/compito_1/src/pistone.cpp
+pistone.h
+/home/luca/compito_1/src/pistone.h
 iostream
 -
-pistone.h
-/home/luca/compito_1/pistone.h
+cstring
+-
 

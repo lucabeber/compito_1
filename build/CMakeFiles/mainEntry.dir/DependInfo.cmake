@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/luca/compito_1/main.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/main.cpp.o"
   "/home/luca/compito_1/src/pistone.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/pistone.cpp.o"
+  "/home/luca/compito_1/src/svg.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/svg.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

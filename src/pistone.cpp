@@ -3,10 +3,7 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;/*
- *  Source for the not-part-of-a-library class Fraction
- *
- */
+using namespace std;
 
 Pistone* pist_init(int base){
 
@@ -72,7 +69,7 @@ string svg_pist(Pistone* pistone, Posizione* posizione){
     ret = ret + to_string(posizione->x + pistone->deltaS) + virgola + to_string(posizione->y - pistone->altezza) + spazio;
 
     // coordinate del punto 8
-    ret = ret + to_string(posizione->x) + virgola + to_string(posizione->y - pistone->altezza) + spazio;
+    ret = ret + to_string(posizione->x) + virgola + to_string(posizione->y - pistone->altezza)+ "\"" + spazio;
 
     // chiusura della funzione poligono e stile
     ret +=  "style=\"fill:gray,stroke:black,stroke-width:1\" />";

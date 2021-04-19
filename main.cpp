@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "pistone.h"
-
+#include "svg.h"
 
 using namespace std;
 
@@ -23,7 +23,13 @@ int main() {
 
     string s=svg_pist(pistone,posizione);
 
-    cout << s;
+    cout << s << endl;
+
+    s=svg(s);
+
+    cout << s << endl;
+
+    svg_to_file("pistone.svg",s);
 
     cout << "\nFine programma";
     return 0;

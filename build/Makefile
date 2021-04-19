@@ -177,6 +177,33 @@ src/pistone.cpp.s:
 	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/pistone.cpp.s
 .PHONY : src/pistone.cpp.s
 
+src/svg.o: src/svg.cpp.o
+
+.PHONY : src/svg.o
+
+# target to build an object file
+src/svg.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.o
+.PHONY : src/svg.cpp.o
+
+src/svg.i: src/svg.cpp.i
+
+.PHONY : src/svg.i
+
+# target to preprocess a source file
+src/svg.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.i
+.PHONY : src/svg.cpp.i
+
+src/svg.s: src/svg.cpp.s
+
+.PHONY : src/svg.s
+
+# target to generate assembly for a file
+src/svg.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/svg.cpp.s
+.PHONY : src/svg.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... src/pistone.o"
 	@echo "... src/pistone.i"
 	@echo "... src/pistone.s"
+	@echo "... src/svg.o"
+	@echo "... src/svg.i"
+	@echo "... src/svg.s"
 .PHONY : help
 
 
