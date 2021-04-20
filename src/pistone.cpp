@@ -41,8 +41,10 @@ string svg_pist(Pistone* pistone, Posizione* posizione){
     // creo un nuovo puntatore a stringa
     string ret, virgola = ",", spazio = " ";
 
+    // creo un commento che indica il pezzo che si sta andando a disegnare e la sua base
+    ret = "<!--\n \tPistone " + to_string(pistone->base) + "\n-->\n";
     // scrivo nella stringa il file svg del pistone
-    ret =   "<polygon points=\"";
+    ret +=   "<polygon points=\"";
     
     // partendo dal punto iniziale si inseriscono i punti per 
     // costruire il pistone. 
@@ -75,4 +77,21 @@ string svg_pist(Pistone* pistone, Posizione* posizione){
     ret +=  "style=\"fill:gray,stroke:black,stroke-width:1\" />";
 
     return ret;
+}
+
+
+Pistone*  nuovo_pist(string str){
+
+    // si trova all'interno della stringa acquisita la parola chiave pistone
+    string p = "Pistone";
+    size_t found = str.find(p);
+
+    // creo una nuova stringa contenente il valore della base
+    string new_str;
+    new_str = str.substr(found+8, found+12);
+    
+    /* attraverso il comando atoi trasformo la string contenente il valore della 
+     * base in un intero
+    */
+    return pist_init(atoi(new_str.c_str()));
 }

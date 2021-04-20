@@ -45,5 +45,10 @@ Posizione* posiz_pist(unsigned int x, unsigned int y);
  */
 std::string svg_pist(Pistone* pistone, Posizione* posizione);
 
+/** Funzione che legge una stringa svg contenente l'immagine del pisone 
+ *  e ne costruisce un nuova struct Pistone
+ *  - se non viene trovato alcun pistone la funzione ritorna una struttura vuota
+ */
+Pistone*  nuovo_pist(std::string file);
 
 #endif //PISTONE_H

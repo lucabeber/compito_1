@@ -9,7 +9,9 @@ int main() {
 
     cout << "Inizializzazione pistone\n";
 
-    Pistone* pistone = pist_init(200);
+    int a=20;
+
+    Pistone* pistone = pist_init(a);
 
     cout << "Pistone inizializzato\n";
 
@@ -30,6 +32,8 @@ int main() {
     cout << s << endl;
 
     svg_to_file("pistone.svg",s);
+
+    //nuovo_pist(s);
 
     cout << "\nFine programma";
     return 0;
