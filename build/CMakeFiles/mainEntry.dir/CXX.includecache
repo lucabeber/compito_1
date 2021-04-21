@@ -10,11 +10,15 @@
 string
 -
 
-/home/luca/compito_1/src/pistone.cpp
-pistone.h
-/home/luca/compito_1/src/pistone.h
+../include/svg.h
+string
+-
+
+/home/luca/compito_1/main.cpp
 iostream
 -
-cstring
--
+pistone.h
+/home/luca/compito_1/pistone.h
+svg.h
+/home/luca/compito_1/svg.h
 

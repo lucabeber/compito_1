@@ -19,7 +19,7 @@ string svg(string componenti){
     // si inizializza il file svg
     s += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?> \n";
 
-    s += "<svg xmlns=\"http://www.w3.org/2000/svg\" width= \"800\" height=\"600\" style=\" background-color:white\" >\n";
+    s += "<svg xmlns=\"http://www.w3.org/2000/svg\" width= \"800\" height=\"600\" style=\"background-color:white\" >\n";
 
     // si inseriscono i poligoni creati all'interno del file svg
     s += componenti;
