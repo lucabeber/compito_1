@@ -150,6 +150,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/biella.o: src/biella.cpp.o
+
+.PHONY : src/biella.o
+
+# target to build an object file
+src/biella.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.o
+.PHONY : src/biella.cpp.o
+
+src/biella.i: src/biella.cpp.i
+
+.PHONY : src/biella.i
+
+# target to preprocess a source file
+src/biella.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.i
+.PHONY : src/biella.cpp.i
+
+src/biella.s: src/biella.cpp.s
+
+.PHONY : src/biella.s
+
+# target to generate assembly for a file
+src/biella.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.s
+.PHONY : src/biella.cpp.s
+
+src/manovella.o: src/manovella.cpp.o
+
+.PHONY : src/manovella.o
+
+# target to build an object file
+src/manovella.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.o
+.PHONY : src/manovella.cpp.o
+
+src/manovella.i: src/manovella.cpp.i
+
+.PHONY : src/manovella.i
+
+# target to preprocess a source file
+src/manovella.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.i
+.PHONY : src/manovella.cpp.i
+
+src/manovella.s: src/manovella.cpp.s
+
+.PHONY : src/manovella.s
+
+# target to generate assembly for a file
+src/manovella.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.s
+.PHONY : src/manovella.cpp.s
+
 src/pistone.o: src/pistone.cpp.o
 
 .PHONY : src/pistone.o
@@ -216,6 +270,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/biella.o"
+	@echo "... src/biella.i"
+	@echo "... src/biella.s"
+	@echo "... src/manovella.o"
+	@echo "... src/manovella.i"
+	@echo "... src/manovella.s"
 	@echo "... src/pistone.o"
 	@echo "... src/pistone.i"
 	@echo "... src/pistone.s"

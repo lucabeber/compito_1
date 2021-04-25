@@ -46,7 +46,7 @@ Pistone* pist_init(unsigned int base, unsigned int x, unsigned int y);
  * 
  *  @return stringa che contiene i dati in svg del pistone
  */
-std::string svg_pist(Pistone* pistone);
+std::string pist_svg(Pistone* pistone, bool misure);
 
 /** Funzione che legge una stringa svg contenente l'immagine del pisone 
  *  e ne costruisce un nuova struct Pistone
@@ -55,13 +55,13 @@ std::string svg_pist(Pistone* pistone);
  * 
  *  @return struttura pistone contenente i dati trovati all'interno del file
  */
-Pistone*  nuovo_pist(std::string file);
+Pistone*  pist_new(std::string file);
 
 /** 
  *  Funzione che libera lo spazio di memoria occupato dalla struttura pistone
  *  
  *  @param pistone spazio di memoria da liberare
  */
-void  elimina_pist(Pistone* pistone);
+void  pist_del(Pistone* pistone);
 
 #endif //PISTONE_H

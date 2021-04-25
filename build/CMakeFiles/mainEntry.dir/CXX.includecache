@@ -6,19 +6,27 @@
 
 #IncludeRegexTransform: 
 
+../include/manovella.h
+string
+-
+
 ../include/pistone.h
 string
 -
 
-../include/svg.h
-string
--
-
-/home/luca/compito_1/main.cpp
+/home/luca/compito_1/src/manovella.cpp
+manovella.h
+/home/luca/compito_1/src/manovella.h
 iostream
 -
+cstring
+-
+
+/home/luca/compito_1/src/pistone.cpp
 pistone.h
-/home/luca/compito_1/pistone.h
-svg.h
-/home/luca/compito_1/svg.h
+/home/luca/compito_1/src/pistone.h
+iostream
+-
+cstring
+-
 

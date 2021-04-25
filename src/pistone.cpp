@@ -31,13 +31,16 @@ Pistone* pist_init(unsigned int base, unsigned int x, unsigned int y){
     }     
 }
 
-string svg_pist(Pistone* pistone){
+string pist_svg(Pistone* pistone, bool misure){
 
     // creo un nuovo puntatore a stringa
     string ret, virgola = ",", spazio = " ";
 
     // creo un commento che indica il pezzo che si sta andando a disegnare e la sua base
     ret = "<!--\n \tPistone " + to_string(pistone->base) + "\n-->\n";
+    
+    
+    
     // scrivo nella stringa il file svg del pistone
     ret +=   "<polygon points=\"";
     
@@ -69,13 +72,23 @@ string svg_pist(Pistone* pistone){
     ret = ret + to_string(pistone->pos.x) + virgola + to_string(pistone->pos.y - pistone->altezza)+ "\"" + spazio;
 
     // chiusura della funzione poligono e stile
-    ret +=  "style=\"fill:gray,stroke:black,stroke-width:1\" />";
+    ret +=  "style=\"fill:gray;stroke:black;stroke-width:1\" />\n";
+
+    if (misure == true){
+        // si inserisce il valore della misura
+        ret += "<text x = \"" + to_string(pistone->pos.x+pistone->base/2) + "\" y = \"" + to_string(pistone->pos.y + 20) + "\"  fill=\"black\">";
+        ret += to_string(pistone->base) + "</text>";
+
+        // si inserisce la linea di riferimento della misura
+        ret += "<line x1=\"" +  to_string(pistone->pos.x) + "\" y1=\"" + to_string(pistone->pos.y + 25) + "\" x2=\"" + to_string(pistone->pos.x + pistone->base) + "\" y2= \"" + to_string(pistone->pos.y + 25);
+        ret += "\" style=\"stroke:black;stroke-width:2\" />\n";
+    }
 
     return ret;
 }
 
 
-Pistone*  nuovo_pist(string str){
+Pistone*  pist_new(string str){
 
     // si trova all'interno della stringa acquisita la parola p
     string p = "polygon points=\"";     //16 caratteri
@@ -112,6 +125,6 @@ Pistone*  nuovo_pist(string str){
     return pist_init(c-a,a,b);
 }
 
-void  elimina_pist(Pistone* pistone){
+void  pist_del(Pistone* pistone){
     delete pistone;
 }

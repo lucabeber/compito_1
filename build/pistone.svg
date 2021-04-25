@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?> 
 <svg xmlns="http://www.w3.org/2000/svg" width= "800" height="600" style="background-color:white" >
 <!--
- 	Pistone 100
+ 	Manovella 
 -->
-<polygon points="100,100 200,100 200,50 185,50 185,65 115,65 115,50 100,50" style="fill:gray,stroke:black,stroke-width:1" />
+<g transform="rotate(60 200,200)" >
+<rect  x="200" y="200" width="3" height="30" style="fill:green;stroke:black;stroke-width:1" /><text x = "223" y = "215"  fill="black" transform="rotate(-90 223,215)">30</text>
+<line x1="228" y1="200" x2="228" y2= "230" style="stroke:black;stroke-width:2" />
+</g>
+<!--
+ 	Biella 
+-->
+<g transform="rotate(2 209,228)" >
+<rect  x="209" y="228" width="9" height="90" style="fill:green;stroke:black;stroke-width:1" /><text x = "233" y = "273"  fill="black" transform="rotate(-90 239,273)">90</text>
+<line x1="243" y1="228" x2="243" y2= "318" style="stroke:black;stroke-width:2" />
+</g>
+<!--
+ 	Pistone 30
+-->
+<polygon points="500,500 530,500 530,485 526,485 526,489 504,489 504,485 500,485" style="fill:gray;stroke:black;stroke-width:1" />
+<text x = "515" y = "520"  fill="black">30</text><line x1="500" y1="525" x2="530" y2= "525" style="stroke:black;stroke-width:2" />
+
 </svg>
