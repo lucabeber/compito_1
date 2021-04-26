@@ -6,8 +6,8 @@ Il codice e' stato scritto in modo da poter permettere di utilizzare singolarmen
 
 ### Pistone 
 Parte del meccanismo che scorre in orizzontale. E' possibile imporre la posizione e la lunghezza della base, gli altri parametri vengono ricavati automaticamente. Le informazioni vengono salvare in una struttura detta Pistone.
-Sono presenti 4 funzioni:
--pist_init: crea la truttura contenente i dati del pistone
+Sono presenti 4 funzioni:\n
+-pist_init: crea la truttura contenente i dati del pistone\n
 -pist_svg: crea un stringa in svg della struttura pistone che stova in ingresso
 -pist_new: crea una nuova struttura di un pistone letta da una stringa
 -pist_del: pulisce lo spazio occupato dalla truttura del pistone
