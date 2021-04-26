@@ -37,7 +37,7 @@ string pist_svg(Pistone* pistone, bool misure){
     string ret, virgola = ",", spazio = " ";
 
     // creo un commento che indica il pezzo che si sta andando a disegnare e la sua base
-    ret = "<!--\n \tPistone " + to_string(pistone->base) + "\n-->\n";
+    ret = "<!--\n \tPistone \n-->\n";
     
     
     

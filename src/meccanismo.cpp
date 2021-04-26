@@ -35,7 +35,7 @@ Meccanismo* meccanismo_init(double r, double d, double bas, double q, double x, 
 std::string meccanismo_svg(Meccanismo* meccanismo, bool misure){
 
     // si ottine una stringa contenente l'svg del meccanismo richiamando le funzioni dei vari componenti
-    std::string s = manovella_svg(meccanismo->manovella,misure) + biella_svg(meccanismo->biella,misure) + pist_svg(meccanismo->pistone,misure);
+    std::string s = manovella_svg(meccanismo->manovella,misure) + pist_svg(meccanismo->pistone,misure) + biella_svg(meccanismo->biella,misure);
 
     return s;
 }
