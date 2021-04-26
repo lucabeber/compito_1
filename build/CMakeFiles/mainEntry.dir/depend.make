@@ -3,6 +3,7 @@
 
 CMakeFiles/mainEntry.dir/main.cpp.o: ../include/biella.h
 CMakeFiles/mainEntry.dir/main.cpp.o: ../include/manovella.h
+CMakeFiles/mainEntry.dir/main.cpp.o: ../include/meccanismo.h
 CMakeFiles/mainEntry.dir/main.cpp.o: ../include/pistone.h
 CMakeFiles/mainEntry.dir/main.cpp.o: ../include/svg.h
 CMakeFiles/mainEntry.dir/main.cpp.o: ../main.cpp
@@ -12,6 +13,13 @@ CMakeFiles/mainEntry.dir/src/biella.cpp.o: ../src/biella.cpp
 
 CMakeFiles/mainEntry.dir/src/manovella.cpp.o: ../include/manovella.h
 CMakeFiles/mainEntry.dir/src/manovella.cpp.o: ../src/manovella.cpp
+
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../include/biella.h
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../include/manovella.h
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../include/meccanismo.h
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../include/pistone.h
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../include/svg.h
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o: ../src/meccanismo.cpp
 
 CMakeFiles/mainEntry.dir/src/pistone.cpp.o: ../include/pistone.h
 CMakeFiles/mainEntry.dir/src/pistone.cpp.o: ../src/pistone.cpp

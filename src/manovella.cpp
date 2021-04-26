@@ -74,7 +74,6 @@ std::string manovella_svg(Manovella* manovella, bool misure){
 
     return ret;
 }
-using namespace std;
 
 Manovella*  manovella_new(std::string str){
 
@@ -97,7 +96,7 @@ Manovella*  manovella_new(std::string str){
     *  il valore di rot in un intero
     */
     d = atoi(new_str.c_str());
-    std::cout<<d<<endl;
+   
     // acquisizione del valore x
     p = "rect  x=\"";
     found = str.find(p,found)+p.size();
@@ -108,7 +107,7 @@ Manovella*  manovella_new(std::string str){
     *  il valore di x in un intero
     */
     a = atoi(new_str.c_str());
-    std::cout<<a<<endl;
+    
     // creo una nuova stringa contenente il valore di y
     p = "y=\"";
     found = str.find(p,found)+p.size();
@@ -119,7 +118,7 @@ Manovella*  manovella_new(std::string str){
     *  il valore di y in un intero
     */
     b = atoi(new_str.c_str());
-    std::cout<<b<<endl;
+
     // creo una nuova manovellaga contenente il valore dell'altezza
     p = "height=\"";
     found = str.find(p,found)+p.size();
@@ -130,7 +129,7 @@ Manovella*  manovella_new(std::string str){
     *  il secondo valore dell'altezza in un intero
     */
     c = atoi(new_str.c_str());
-    std::cout<<c<<endl;
+    
     return manovella_init(c,a,b,d);
 }
 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<svg xmlns="http://www.w3.org/2000/svg" width= "800" height="600" style="background-color:white" >
+<!--
+ 	Manovella 
+-->
+<g transform="rotate(-200 200,200)" >
+<rect  x="200" y="200" width="6" height="50" style="fill:green;stroke:black;stroke-width:1" /></g>
+<!--
+ 	Biella 
+-->
+<g transform="rotate(3 182,152)" >
+<rect  x="182" y="152" width="20" height="200" style="fill:green;stroke:black;stroke-width:1" /></g>
+<!--
+ 	Pistone 150
+-->
+<polygon points="95,390 245,390 245,315 223,315 223,337 117,337 117,315 95,315" style="fill:gray;stroke:black;stroke-width:1" />
+<!--
+ 	Manovella 
+-->
+<g transform="rotate(-400 200,200)" >
+<rect  x="200" y="200" width="6" height="50" style="fill:green;stroke:black;stroke-width:1" /></g>
+<!--
+ 	Biella 
+-->
+<g transform="rotate(18 232,238)" >
+<rect  x="232" y="238" width="20" height="200" style="fill:green;stroke:black;stroke-width:1" /></g>
+<!--
+ 	Pistone 30
+-->
+<polygon points="155,436 185,436 185,421 181,421 181,425 159,425 159,421 155,421" style="fill:gray;stroke:black;stroke-width:1" />
+
+</svg>

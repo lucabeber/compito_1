@@ -10,7 +10,7 @@
 <!--
  	Biella 
 -->
-<g transform="rotate(2 209,228)" >
+<g transform="rotate(10 209,228)" >
 <rect  x="209" y="228" width="9" height="90" style="fill:green;stroke:black;stroke-width:1" /><text x = "233" y = "273"  fill="black" transform="rotate(-90 239,273)">90</text>
 <line x1="243" y1="228" x2="243" y2= "318" style="stroke:black;stroke-width:2" />
 </g>

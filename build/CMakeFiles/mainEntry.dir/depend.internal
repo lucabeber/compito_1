@@ -4,6 +4,7 @@
 CMakeFiles/mainEntry.dir/main.cpp.o
  ../include/biella.h
  ../include/manovella.h
+ ../include/meccanismo.h
  ../include/pistone.h
  ../include/svg.h
  /home/luca/compito_1/main.cpp
@@ -13,6 +14,13 @@ CMakeFiles/mainEntry.dir/src/biella.cpp.o
 CMakeFiles/mainEntry.dir/src/manovella.cpp.o
  ../include/manovella.h
  /home/luca/compito_1/src/manovella.cpp
+CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o
+ ../include/biella.h
+ ../include/manovella.h
+ ../include/meccanismo.h
+ ../include/pistone.h
+ ../include/svg.h
+ /home/luca/compito_1/src/meccanismo.cpp
 CMakeFiles/mainEntry.dir/src/pistone.cpp.o
  ../include/pistone.h
  /home/luca/compito_1/src/pistone.cpp

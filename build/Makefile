@@ -204,6 +204,33 @@ src/manovella.cpp.s:
 	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.s
 .PHONY : src/manovella.cpp.s
 
+src/meccanismo.o: src/meccanismo.cpp.o
+
+.PHONY : src/meccanismo.o
+
+# target to build an object file
+src/meccanismo.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o
+.PHONY : src/meccanismo.cpp.o
+
+src/meccanismo.i: src/meccanismo.cpp.i
+
+.PHONY : src/meccanismo.i
+
+# target to preprocess a source file
+src/meccanismo.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.i
+.PHONY : src/meccanismo.cpp.i
+
+src/meccanismo.s: src/meccanismo.cpp.s
+
+.PHONY : src/meccanismo.s
+
+# target to generate assembly for a file
+src/meccanismo.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.s
+.PHONY : src/meccanismo.cpp.s
+
 src/pistone.o: src/pistone.cpp.o
 
 .PHONY : src/pistone.o
@@ -276,6 +303,9 @@ help:
 	@echo "... src/manovella.o"
 	@echo "... src/manovella.i"
 	@echo "... src/manovella.s"
+	@echo "... src/meccanismo.o"
+	@echo "... src/meccanismo.i"
+	@echo "... src/meccanismo.s"
 	@echo "... src/pistone.o"
 	@echo "... src/pistone.i"
 	@echo "... src/pistone.s"

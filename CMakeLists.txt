@@ -14,7 +14,7 @@ target_sources(mainEntry PRIVATE src/pistone.cpp
                                  src/svg.cpp
                                  src/biella.cpp
                                  src/manovella.cpp
-                                 
+                                 src/meccanismo.cpp
                                  )
 target_link_libraries(mainEntry)
 

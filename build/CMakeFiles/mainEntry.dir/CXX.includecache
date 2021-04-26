@@ -6,27 +6,45 @@
 
 #IncludeRegexTransform: 
 
+../include/biella.h
+string
+-
+
 ../include/manovella.h
 string
 -
+
+../include/meccanismo.h
+pistone.h
+../include/pistone.h
+biella.h
+../include/biella.h
+svg.h
+../include/svg.h
+manovella.h
+../include/manovella.h
 
 ../include/pistone.h
 string
 -
 
-/home/luca/compito_1/src/manovella.cpp
-manovella.h
-/home/luca/compito_1/src/manovella.h
-iostream
--
-cstring
+../include/svg.h
+string
 -
 
-/home/luca/compito_1/src/pistone.cpp
-pistone.h
-/home/luca/compito_1/src/pistone.h
+/home/luca/compito_1/main.cpp
 iostream
 -
-cstring
+math.h
 -
+pistone.h
+/home/luca/compito_1/pistone.h
+biella.h
+/home/luca/compito_1/biella.h
+svg.h
+/home/luca/compito_1/svg.h
+manovella.h
+/home/luca/compito_1/manovella.h
+meccanismo.h
+/home/luca/compito_1/meccanismo.h
 

@@ -5,6 +5,8 @@
 #include "biella.h"
 #include "svg.h"
 #include "manovella.h"
+#include "meccanismo.h"
+
 
 using namespace std;
 
@@ -80,14 +82,13 @@ int main() {
     elimina_pist(pistone);
 
     cout << "\nFine programma\n";*/
-    double r=10,d=30,h=10,q=20;
+    /*double r=10,d=30,h=10,q=20;
     cout << "Costruzione del meccanismo";
     Manovella* man = manovella_init(30,200,200, 60);
 
     double a,b;
 
-    a = sqrt(pow(d,2)-pow(h,2)-2*h*r*sin(q)-pow(r,2)*pow(sin(q),2))/d;
-    b = (-h-r*sin(q))/d;
+    
 
     Biella* bie = biella_init (90, 200 + 30*sin(-60), 200 - 30*cos(-60), atan2(a,b));
 
@@ -109,6 +110,26 @@ int main() {
         cout << "I caught the exception, will continue" << endl;
     };
     std::string s2=manovella_svg(pistone2,0);
-    cout<<s2;
+    cout<<s2;*/
+
+    Meccanismo** arr;
+    int n=2;
+    
+    arr= new Meccanismo* [n];
+
+    arr[0]=meccanismo_init(50,200,150,200,200,200,30);
+    arr[1]=meccanismo_init(50,200,30,400,200,200,30);
+
+    std::string s = meccanismo_svg(arr[0],0);
+    s += meccanismo_svg(arr[1],0);
+
+    s = svg(s);
+
+    svg_to_file("../Meccanismo.svg",s);
+
+    meccanismo_del(arr[0]);
+    meccanismo_del(arr[1]);
+
+    delete arr;
     return 0;
 }
