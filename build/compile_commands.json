@@ -13,5 +13,20 @@
   "directory": "/home/luca/compito_1/build",
   "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/svg.cpp.o -c /home/luca/compito_1/src/svg.cpp",
   "file": "/home/luca/compito_1/src/svg.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/biella.cpp.o -c /home/luca/compito_1/src/biella.cpp",
+  "file": "/home/luca/compito_1/src/biella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/manovella.cpp.o -c /home/luca/compito_1/src/manovella.cpp",
+  "file": "/home/luca/compito_1/src/manovella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o -c /home/luca/compito_1/src/meccanismo.cpp",
+  "file": "/home/luca/compito_1/src/meccanismo.cpp"
 }
 ]

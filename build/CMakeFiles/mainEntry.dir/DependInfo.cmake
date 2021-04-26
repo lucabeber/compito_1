@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/luca/compito_1/main.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/main.cpp.o"
+  "/home/luca/compito_1/src/biella.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/biella.cpp.o"
+  "/home/luca/compito_1/src/manovella.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/manovella.cpp.o"
+  "/home/luca/compito_1/src/meccanismo.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o"
   "/home/luca/compito_1/src/pistone.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/pistone.cpp.o"
   "/home/luca/compito_1/src/svg.cpp" "/home/luca/compito_1/build/CMakeFiles/mainEntry.dir/src/svg.cpp.o"
   )
