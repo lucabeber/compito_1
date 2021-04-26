@@ -1,14 +1,11 @@
 #include <iostream>
-#include <math.h>
+#include <cstring>
 
 #include "pistone.h"
 #include "biella.h"
 #include "svg.h"
 #include "manovella.h"
 #include "meccanismo.h"
-
-
-using namespace std;
 
 int main() {
     /*
@@ -111,25 +108,108 @@ int main() {
     };
     std::string s2=manovella_svg(pistone2,0);
     cout<<s2;*/
-
-    Meccanismo** arr;
-    int n=2;
     
-    arr= new Meccanismo* [n];
+    bool cp = true, d=false;         // variabili booleane che sevono per tenere conto dello stato del programma
+    char c;                             // variabile utilizzata per l'istruzione da attuare     
+    Meccanismo** arr;                   // doppio puntatore per creazione di un array di meccanismi
+    int angolo,delta=0,n;                 // 3 variabili che si utilizzeranno per costruire il meccanismo
+    std::string s, nomefile, p, y;      // stringhe di appoggio  
+    s.clear();
+    y="Yes";
 
-    arr[0]=meccanismo_init(50,200,150,200,200,200,30);
-    arr[1]=meccanismo_init(50,200,30,400,200,200,30);
+    // creo un ciclo che funziona finche non si mette cp uguale a false
+    while ( cp == true){
+    std::cout<<"Scegli cosa vuoi fare: (i per informazioni)"<<std::endl;
+    std::cin>>c;
 
-    std::string s = meccanismo_svg(arr[0],0);
-    s += meccanismo_svg(arr[1],0);
+    switch (c)
+    {
+    case 'd':
+        // si controlla che in memoria non sia gia presente un meccanismo 
+        if (d == true){
+            std::cout<<"E' presente un device in memori se desideri continuare sara cancellato (Yes)"<<std::endl;
+            std::cin>>p;
 
-    s = svg(s);
+            if (p.compare(y) == 0){  //l'utente puo' scegliere se continuare elimenando il meccanismo in memoria o se uscire e salvare prima di eliminare
+                for (int i=0; i<n; i++){
+                    meccanismo_del(arr[i]);
+                } 
+                delete arr;
+            }else{
+                break;
+            }
+        }
 
-    svg_to_file("../Meccanismo.svg",s);
+        // si inseriscono i dati per costruire i meccanismi
+        std::cout<<"Quanti device sono presenti ?"<<std::endl;
+        std::cin>>n;
 
-    meccanismo_del(arr[0]);
-    meccanismo_del(arr[1]);
+        // controllo per evitare che non ci siano troppi elementi 
+        if (n>8){
+            std::cout<<"Non possono essere presenti cosi tanti elementi."<<std::endl;
+            break;
+        } else if (n<0){
+            std::cout<<"Non puo' essere presente un numero negativo di elementi."<<std::endl;
+            break;
+        }
 
-    delete arr;
+        arr= new Meccanismo* [n];
+
+        std::cout<<"Angolo della manovella:"<<std::endl;
+        std::cin>>angolo;
+
+        if(n>=1){
+            std::cout<<"Delta angolo:"<<std::endl;
+            std::cin>>delta;
+        }else{
+            delta=0;
+        } 
+
+        for (int i=0; i<n; i++){
+            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,50+100*i,200,1);
+        } 
+        d = true;
+        break;
+    
+    case 's':
+        for (int i=0; i<n; i++){
+            s += meccanismo_svg(arr[i],0);
+            meccanismo_del(arr[i]);
+        } 
+        delete arr;
+
+        d = false; 
+
+        s = svg(s);
+
+        std::cout<<"Nome del file su cui salvare il codice svg"<<std::endl;
+        std::cin>>nomefile;
+
+        svg_to_file(nomefile,s);
+
+        s.clear();
+        nomefile.clear();
+
+        
+        break;
+
+    case 'l':
+        /* code */
+        break;
+    
+    case 'i':
+        std::cout<<"Creazione di un nuovo device (d)"<<std::endl;
+        std::cout<<"Salvare il device che hai creato (s)"<<std::endl;
+        std::cout<<"Leggere un divice da un file salvato (l)"<<std::endl;
+        std::cout<<"Fine del programma (f)"<<std::endl;
+        break;
+
+    case 'f':
+        std::cout<<"Fine del programma"<<std::endl;
+        cp = false;
+    default:
+        break;
+    }
+    }
     return 0;
 }
