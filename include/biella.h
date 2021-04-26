@@ -29,7 +29,7 @@ struct Biella {
 
 /** Funzione che inizializza la biella 
  * 
- *  @param base lunghezza di base del pistone 
+ *  @param altezza altezza della biella
  * 
  *  @param x coordinata x del pistone
  * 

@@ -28,5 +28,30 @@
   "directory": "/home/luca/compito_1/build",
   "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o -c /home/luca/compito_1/src/meccanismo.cpp",
   "file": "/home/luca/compito_1/src/meccanismo.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/catch2Main.cpp.o -c /home/luca/compito_1/tests/catch2Main.cpp",
+  "file": "/home/luca/compito_1/tests/catch2Main.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testPistone.cpp.o -c /home/luca/compito_1/tests/testPistone.cpp",
+  "file": "/home/luca/compito_1/tests/testPistone.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testBiella.cpp.o -c /home/luca/compito_1/tests/testBiella.cpp",
+  "file": "/home/luca/compito_1/tests/testBiella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o -c /home/luca/compito_1/src/pistone.cpp",
+  "file": "/home/luca/compito_1/src/pistone.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/biella.cpp.o -c /home/luca/compito_1/src/biella.cpp",
+  "file": "/home/luca/compito_1/src/biella.cpp"
 }
 ]
