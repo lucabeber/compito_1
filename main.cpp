@@ -86,12 +86,12 @@ int main() {
             std::cout<<"Inserisci un valore valido"<<std::endl;
             break;
         }
-
+        
         s = "<!--\n Sono presenti " + std::to_string(n) + " meccanismi\n-->\n";
         
         for (int i=0; i<n; i++){
             s += "<!--\n Meccanismo " + std::to_string(i+1) + "\n-->\n";
-            s += meccanismo_svg(arr[i],1);
+            s += meccanismo_svg(arr[i],misure);
             meccanismo_del(arr[i]);
         } 
         delete arr;
