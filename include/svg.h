@@ -28,6 +28,6 @@ void svg_to_file(std::string filename, std::string str_svg);
  * 
  *  @return stringa che contiene il svg presente nel file
  */
-std::string read_svg(std::string filename);
+std::string svg_read(std::string filename);
 
 #endif //SVG_H

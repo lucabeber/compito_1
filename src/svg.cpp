@@ -36,10 +36,12 @@ void svg_to_file (string filename, string str_svg){
     // scrivo all'interno del file la stringa svg
     MyFile << str_svg;
 
+    cout << "Il file " << filename << " e` stato creato ed e' stato scritto al suo interno" << endl;
+
     MyFile.close();
 }
 
-string read_svg (string filename){
+string svg_read (string filename){
 
     std::ifstream t(filename);
     std::stringstream buffer;
@@ -48,7 +50,6 @@ string read_svg (string filename){
     string s = buffer.str();
 
     cout << "Il file " << filename << " e` stato letto" << endl;
-    cout << s << endl;
 
     return s;
 }
