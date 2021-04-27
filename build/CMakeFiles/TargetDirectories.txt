@@ -1,3 +1,6 @@
 /home/luca/compito_1/build/CMakeFiles/rebuild_cache.dir
 /home/luca/compito_1/build/CMakeFiles/edit_cache.dir
 /home/luca/compito_1/build/CMakeFiles/mainEntry.dir
+/home/luca/compito_1/build/tests/CMakeFiles/rebuild_cache.dir
+/home/luca/compito_1/build/tests/CMakeFiles/edit_cache.dir
+/home/luca/compito_1/build/tests/CMakeFiles/catch2Test.dir

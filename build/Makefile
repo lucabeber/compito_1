@@ -123,6 +123,19 @@ mainEntry/fast:
 	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/build
 .PHONY : mainEntry/fast
 
+#=============================================================================
+# Target rules for targets named catch2Test
+
+# Build rule for target.
+catch2Test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 catch2Test
+.PHONY : catch2Test
+
+# fast build rule for target.
+catch2Test/fast:
+	$(MAKE) -f tests/CMakeFiles/catch2Test.dir/build.make tests/CMakeFiles/catch2Test.dir/build
+.PHONY : catch2Test/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -294,6 +307,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mainEntry"
+	@echo "... catch2Test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

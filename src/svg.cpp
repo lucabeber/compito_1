@@ -30,7 +30,6 @@ string svg(string componenti){
 }
 
 void svg_to_file (string filename, string str_svg){
-
     // creazione ed apertura del file
     ofstream MyFile(filename);
 
