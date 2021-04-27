@@ -47,6 +47,15 @@ Meccanismo* meccanismo_init(double hman, double hbiel, double bpist, double ango
  **/
 std::string meccanismo_svg(Meccanismo* meccanismo, bool misure);
 
+/** Funzione che legge una stringa svg contenente l'immagine del meccanismo 
+ *  e ne costruisce un nuova struct 
+ *  
+ *  @param s stringa contenente il testo letto da un file svg
+ * 
+ *  @return struttura pistone contenente i dati trovati all'interno del file
+ */
+Meccanismo*  meccanismo_new(std::string file);
+
 
 /** 
  *  Funzione che libera lo spazio di memoria occupato dall' intero meccanismo

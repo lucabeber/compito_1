@@ -58,8 +58,42 @@ std::string meccanismo_svg(Meccanismo* meccanismo, bool misure){
 
     // si ottine una stringa contenente l'svg del meccanismo richiamando le funzioni dei vari componenti
     std::string s = manovella_svg(meccanismo->manovella,misure) + pist_svg(meccanismo->pistone,misure) + biella_svg(meccanismo->biella,misure);
-
     return s;
+}
+
+Meccanismo*  meccanismo_new(std::string file){
+
+    Meccanismo* ret = new Meccanismo; 
+    
+    // si creano le parti del meccanismo tramite la stringa in ingresso
+    try {
+        std::cout << "Creazione della struttura manovella."<< std::endl;
+        ret->manovella = manovella_new(file);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->manovella = NULL;
+    };
+    
+    try {
+        std::cout << "Creazione della struttura manovella."<< std::endl;
+        ret->biella = biella_new(file);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->manovella = NULL;
+    };
+    
+    try {
+        std::cout << "Creazione della struttura pistone."<< std::endl;
+        ret->pistone = pist_new(file);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->pistone = NULL;
+    };
+
+    return ret;
 }
 
 void meccanismo_del(Meccanismo* meccanismo){
