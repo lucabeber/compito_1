@@ -8,112 +8,14 @@
 #include "meccanismo.h"
 
 int main() {
-    /*
-    Biella* biella;
-
-    biella = biella_init(100,200,200,50);
-
-    string s=svg_biella(biella);
-
-    s=svg(s);
-
-    svg_to_file("pistone.svg",s);
-    */
-    /*
-    unsigned int a,b,c;
-    cout << "Inizializzazione pistone\n Inserire l'area di base del pistone:";
-    cin >> a;
-    cout << "Inserire le coordinate x:";
-    cin >> b,c;
-    cout << "Inserire le coordinate y:";
-    cin >> c;
-
-    Pistone* pistone;
-
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone = pist_init(a,b,c);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
     
-
-    cout << "Pistone inizializzato\n";
-
-    cout << "Creazione stringa\n";
-
-    string s=svg_pist(pistone);
-
-    cout << "Eliminazione struttura pistone";
-
-    cout << s << endl;
-
-    s=svg(s);
-
-    cout << s << endl;
-
-    svg_to_file("pistone.svg",s);
-
-    nuovo_pist(s);
-    Pistone* pistone2;
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone2 = pist_init(a,b,c);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
-    
-
-    cout << "Pistone inizializzato\n";
-
-    cout << "Creazione nuova stringa\n";
-
-    string s2=svg_pist(pistone2);
-
-    cout << s2 << endl;
-
-    cout << "Eliminazione struttura pistone";
-
-    elimina_pist(pistone);
-
-    cout << "\nFine programma\n";*/
-    /*double r=10,d=30,h=10,q=20;
-    cout << "Costruzione del meccanismo";
-    Manovella* man = manovella_init(30,200,200, 60);
-
-    double a,b;
-
-    
-
-    Biella* bie = biella_init (90, 200 + 30*sin(-60), 200 - 30*cos(-60), atan2(a,b));
-
-    Pistone* pist =  pist_init(30, 500 ,500); 
-
-    string s = manovella_svg(man,1) + biella_svg(bie,1) + pist_svg(pist,1);
-
-    s=svg(s);
-
-    svg_to_file("pistone.svg",s);
-
-    
-    Manovella* pistone2;
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone2 = manovella_new(s);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
-    std::string s2=manovella_svg(pistone2,0);
-    cout<<s2;*/
-    
-    bool cp = true, d=false;         // variabili booleane che sevono per tenere conto dello stato del programma
+    bool cp = true, d=false, misure;         // variabili booleane che sevono per tenere conto dello stato del programma
     char c;                             // variabile utilizzata per l'istruzione da attuare     
     Meccanismo** arr;                   // doppio puntatore per creazione di un array di meccanismi
     int angolo,delta=0,n;                 // 3 variabili che si utilizzeranno per costruire il meccanismo
-    std::string s, nomefile, p, y;      // stringhe di appoggio  
+    std::string s, nomefile, p, y, new_str;      // stringhe di appoggio 
+    size_t found,found2;
+
     s.clear();
     y="Yes";
 
@@ -172,8 +74,24 @@ int main() {
         break;
     
     case 's':
+        if (d == false){
+            std::cout<<"Non e' presente nessun meccanismo"<<std::endl;
+            break;
+        }
+
+        std::cout<<"Devono essere presenti le misure (0 no e 1 si)"<<std::endl;
+        std::cin>>misure;
+
+        if (misure != 0 && misure != 1){
+            std::cout<<"Inserisci un valore valido"<<std::endl;
+            break;
+        }
+
+        s = "<!--\n Sono presenti " + std::to_string(n) + " meccanismi\n-->\n";
+        
         for (int i=0; i<n; i++){
-            s += meccanismo_svg(arr[i],0);
+            s += "<!--\n Meccanismo " + std::to_string(i+1) + "\n-->\n";
+            s += meccanismo_svg(arr[i],1);
             meccanismo_del(arr[i]);
         } 
         delete arr;
@@ -194,7 +112,38 @@ int main() {
         break;
 
     case 'l':
-        /* code */
+        std::cout<<"Nome del file su cui e' salvato il codice svg"<<std::endl;
+        std::cin>>nomefile;
+
+        s = svg_read(nomefile);
+
+        p = "Sono presenti ";
+
+        found = s.find(p)+size(p);
+        found2 = s.find(" ",found);
+
+        new_str = s.substr(found, found2);
+
+        n = atoi(new_str.c_str());
+        
+        arr= new Meccanismo* [n];
+
+        if (n<0 || n>8) break;
+
+        for (int i=0; i<n; i++){
+            if (i<n-1){
+                new_str = "Meccanismo " + std::to_string(i+2);
+                found2 = s.find(new_str);
+            } else {
+                found2 = s.find("/svg",found);
+            }
+
+            new_str = s.substr(found, found2);
+            arr[i] = meccanismo_new(new_str.c_str());
+            found = found2;
+        }
+
+        d = true;
         break;
     
     case 'i':
