@@ -35,3 +35,29 @@ Le funzioni presenti sono:
 
 
 ### Meccanismo
+In questa libreria vengono uniti assieme i 3 device per formare un meccanismo di spinta. Per poter funzinare necessita delle libreria sopra citate in quanto i dati vengono immessi in una stract contenente le struct dei singoli device. Le funzioni presenti sono:
+
+-meccanismo_init: in cui vengono create le struct dei singoli device
+
+-meccanismo_svg: in cui vengono salvati i device in codice svg
+
+-meccanismo_new: in cui viene letto un codice svg e vengono tratti i dati
+
+-meccanismo_del: per liberare lo spazio di memoria occupato dalla struct del meccanismo e dai device
+
+
+##Main
+Il main e' stato strutturato con uno switch che permette all'utente di svolgere le seguenti azioni:
+
+-creare un nuovo meccanismo e decidere quanti se ne vogliono creare
+
+-salvare su file un meccanismo presente in memori 
+
+-leggere un file svg ed estropolare i dati dei device presenti al suo interno 
+
+-uscire dal programma.
+
+
+
+#### Esempio di immagine che viene creata
+![](meccanismo.svg)
