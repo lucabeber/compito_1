@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cstring>
 
 #include "pistone.h"
 #include "biella.h"
@@ -7,129 +7,158 @@
 #include "manovella.h"
 #include "meccanismo.h"
 
-
-using namespace std;
-
 int main() {
-    /*
-    Biella* biella;
-
-    biella = biella_init(100,200,200,50);
-
-    string s=svg_biella(biella);
-
-    s=svg(s);
-
-    svg_to_file("pistone.svg",s);
-    */
-    /*
-    unsigned int a,b,c;
-    cout << "Inizializzazione pistone\n Inserire l'area di base del pistone:";
-    cin >> a;
-    cout << "Inserire le coordinate x:";
-    cin >> b,c;
-    cout << "Inserire le coordinate y:";
-    cin >> c;
-
-    Pistone* pistone;
-
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone = pist_init(a,b,c);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
     
+    bool cp = true, d=false, misure;         // variabili booleane che sevono per tenere conto dello stato del programma
+    char c;                             // variabile utilizzata per l'istruzione da attuare     
+    Meccanismo** arr;                   // doppio puntatore per creazione di un array di meccanismi
+    int angolo,delta=0,n;                 // 3 variabili che si utilizzeranno per costruire il meccanismo
+    std::string s, nomefile, p, y, new_str;      // stringhe di appoggio 
+    size_t found,found2;
 
-    cout << "Pistone inizializzato\n";
+    s.clear();
+    y="Yes";
 
-    cout << "Creazione stringa\n";
+    // creo un ciclo che funziona finche non si mette cp uguale a false
+    while ( cp == true){
+    std::cout<<"Scegli cosa vuoi fare: (i per informazioni)"<<std::endl;
+    std::cin>>c;
 
-    string s=svg_pist(pistone);
+    switch (c)
+    {
+    case 'd':
+        // si controlla che in memoria non sia gia presente un meccanismo 
+        if (d == true){
+            std::cout<<"E' presente un device in memori se desideri continuare sara cancellato (Yes)"<<std::endl;
+            std::cin>>p;
 
-    cout << "Eliminazione struttura pistone";
+            if (p.compare(y) == 0){  //l'utente puo' scegliere se continuare elimenando il meccanismo in memoria o se uscire e salvare prima di eliminare
+                for (int i=0; i<n; i++){
+                    meccanismo_del(arr[i]);
+                } 
+                delete arr;
+            }else{
+                break;
+            }
+        }
 
-    cout << s << endl;
+        // si inseriscono i dati per costruire i meccanismi
+        std::cout<<"Quanti device sono presenti ?"<<std::endl;
+        std::cin>>n;
 
-    s=svg(s);
+        // controllo per evitare che non ci siano troppi elementi 
+        if (n>8){
+            std::cout<<"Non possono essere presenti cosi tanti elementi."<<std::endl;
+            break;
+        } else if (n<0){
+            std::cout<<"Non puo' essere presente un numero negativo di elementi."<<std::endl;
+            break;
+        }
 
-    cout << s << endl;
+        arr= new Meccanismo* [n];
 
-    svg_to_file("pistone.svg",s);
+        std::cout<<"Angolo della manovella:"<<std::endl;
+        std::cin>>angolo;
 
-    nuovo_pist(s);
-    Pistone* pistone2;
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone2 = pist_init(a,b,c);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
+        if(n>=1){
+            std::cout<<"Delta angolo:"<<std::endl;
+            std::cin>>delta;
+        }else{
+            delta=0;
+        } 
+
+        for (int i=0; i<n; i++){
+            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,50+100*i,200,1);
+        } 
+        d = true;
+        break;
     
+    case 's':
+        if (d == false){
+            std::cout<<"Non e' presente nessun meccanismo"<<std::endl;
+            break;
+        }
 
-    cout << "Pistone inizializzato\n";
+        std::cout<<"Devono essere presenti le misure (0 no e 1 si)"<<std::endl;
+        std::cin>>misure;
 
-    cout << "Creazione nuova stringa\n";
+        if (misure != 0 && misure != 1){
+            std::cout<<"Inserisci un valore valido"<<std::endl;
+            break;
+        }
 
-    string s2=svg_pist(pistone2);
+        s = "<!--\n Sono presenti " + std::to_string(n) + " meccanismi\n-->\n";
+        
+        for (int i=0; i<n; i++){
+            s += "<!--\n Meccanismo " + std::to_string(i+1) + "\n-->\n";
+            s += meccanismo_svg(arr[i],1);
+            meccanismo_del(arr[i]);
+        } 
+        delete arr;
 
-    cout << s2 << endl;
+        d = false; 
 
-    cout << "Eliminazione struttura pistone";
+        s = svg(s);
 
-    elimina_pist(pistone);
+        std::cout<<"Nome del file su cui salvare il codice svg"<<std::endl;
+        std::cin>>nomefile;
 
-    cout << "\nFine programma\n";*/
-    /*double r=10,d=30,h=10,q=20;
-    cout << "Costruzione del meccanismo";
-    Manovella* man = manovella_init(30,200,200, 60);
+        svg_to_file(nomefile,s);
 
-    double a,b;
+        s.clear();
+        nomefile.clear();
 
+        
+        break;
+
+    case 'l':
+        std::cout<<"Nome del file su cui e' salvato il codice svg"<<std::endl;
+        std::cin>>nomefile;
+
+        s = svg_read(nomefile);
+
+        p = "Sono presenti ";
+
+        found = s.find(p)+size(p);
+        found2 = s.find(" ",found);
+
+        new_str = s.substr(found, found2);
+
+        n = atoi(new_str.c_str());
+        
+        arr= new Meccanismo* [n];
+
+        if (n<0 || n>8) break;
+
+        for (int i=0; i<n; i++){
+            if (i<n-1){
+                new_str = "Meccanismo " + std::to_string(i+2);
+                found2 = s.find(new_str);
+            } else {
+                found2 = s.find("/svg",found);
+            }
+
+            new_str = s.substr(found, found2);
+            arr[i] = meccanismo_new(new_str.c_str());
+            found = found2;
+        }
+
+        d = true;
+        break;
     
+    case 'i':
+        std::cout<<"Creazione di un nuovo device (d)"<<std::endl;
+        std::cout<<"Salvare il device che hai creato (s)"<<std::endl;
+        std::cout<<"Leggere un divice da un file salvato (l)"<<std::endl;
+        std::cout<<"Fine del programma (f)"<<std::endl;
+        break;
 
-    Biella* bie = biella_init (90, 200 + 30*sin(-60), 200 - 30*cos(-60), atan2(a,b));
-
-    Pistone* pist =  pist_init(30, 500 ,500); 
-
-    string s = manovella_svg(man,1) + biella_svg(bie,1) + pist_svg(pist,1);
-
-    s=svg(s);
-
-    svg_to_file("pistone.svg",s);
-
-    
-    Manovella* pistone2;
-    try {
-        cout << "Creazione della struttura pistone."<< endl;
-        pistone2 = manovella_new(s);
-    } catch (exception& ex) {
-        cout << "something bad happened!" << ex.what() << endl;
-        cout << "I caught the exception, will continue" << endl;
-    };
-    std::string s2=manovella_svg(pistone2,0);
-    cout<<s2;*/
-
-    Meccanismo** arr;
-    int n=2;
-    
-    arr= new Meccanismo* [n];
-
-    arr[0]=meccanismo_init(50,200,150,200,200,200,30);
-    arr[1]=meccanismo_init(50,200,30,400,200,200,30);
-
-    std::string s = meccanismo_svg(arr[0],0);
-    s += meccanismo_svg(arr[1],0);
-
-    s = svg(s);
-
-    svg_to_file("../Meccanismo.svg",s);
-
-    meccanismo_del(arr[0]);
-    meccanismo_del(arr[1]);
-
-    delete arr;
+    case 'f':
+        std::cout<<"Fine del programma"<<std::endl;
+        cp = false;
+    default:
+        break;
+    }
+    }
     return 0;
 }

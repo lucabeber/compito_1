@@ -7,7 +7,7 @@
  * Libreria C per costruire figure in SVG
 */
 
-/** Struttura che rappresenta le coordinate da cui viene costruitoil pistone 
+/** Struttura che rappresenta le coordinate da cui viene costruito il pistone 
  * 
  * 
 **/

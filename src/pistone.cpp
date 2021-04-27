@@ -11,7 +11,7 @@ Pistone* pist_init(unsigned int base, unsigned int x, unsigned int y){
     if (base <= 0){
         throw invalid_argument("La base non puo' avere un valore negativo!");
     } else if (base>300) {
-        throw invalid_argument("Il pistone che stai cercando di cotruire e` troppo grande"); 
+        throw invalid_argument("Il pistone che stai cercando di costruire e` troppo grande"); 
     } else if (x<0 || y-base/2<0 || x+base>800 || y>600) {
         throw invalid_argument("Le coordinate non sono compatibili con l'immagine");
     } else {
@@ -37,7 +37,7 @@ string pist_svg(Pistone* pistone, bool misure){
     string ret, virgola = ",", spazio = " ";
 
     // creo un commento che indica il pezzo che si sta andando a disegnare e la sua base
-    ret = "<!--\n \tPistone " + to_string(pistone->base) + "\n-->\n";
+    ret = "<!--\n \tPistone \n-->\n";
     
     
     
@@ -106,13 +106,13 @@ Pistone*  pist_new(string str){
 
     // creo una nuova stringa contenente il valore di y
     found = str.find(" ",found2);
-    new_str = str.substr(found2, found);
+    new_str = str.substr(found2+1, found);
     
     /* attraverso il comando atoi trasformo la string contenente 
     *  il valore di y in un intero
     */
     b = atoi(new_str.c_str());
-
+    
     // creo una nuova stringa contenente il secondo valore di x
     found2 = str.find(",",found);
     new_str = str.substr(found, found2);

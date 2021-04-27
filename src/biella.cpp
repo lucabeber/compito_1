@@ -7,9 +7,9 @@ Biella* biella_init(unsigned int altezza, unsigned int x, unsigned int y, int ro
 
     // controllo sui valori da inserire nella struttura della biella
     if (altezza <= 0){
-        throw std::invalid_argument("La base non puo' avere un valore negativo!");
+        throw std::invalid_argument("L'altezza non puo' avere un valore negativo!");
     } else if (altezza>400) {
-        throw std::invalid_argument("Il pistone che stai cercando di cotruire e` troppo grande"); 
+        throw std::invalid_argument("La biella che stai cercando di costruire e' troppo grande"); 
     } else if (x<0 || y<0 || x>800 || y>600) {
         throw std::invalid_argument("Le coordinate non sono compatibili con l'immagine");
     } else {
@@ -132,7 +132,7 @@ Biella*  biella_new(std::string str){
     c = atoi(new_str.c_str());
     
 
-    return biella_init(c-a,a,b,b);
+    return biella_init(c,a,b,d);
 }
 
 void  biella_del(Biella* biella){
