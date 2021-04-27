@@ -46,7 +46,7 @@ In questa libreria vengono uniti assieme i 3 device per formare un meccanismo di
 -meccanismo_del: per liberare lo spazio di memoria occupato dalla struct del meccanismo e dai device
 
 
-##Main
+### Main
 Il main e' stato strutturato con uno switch che permette all'utente di svolgere le seguenti azioni:
 
 -creare un nuovo meccanismo e decidere quanti se ne vogliono creare
