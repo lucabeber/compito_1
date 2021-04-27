@@ -1,4 +1,5 @@
 #include <math.h>
+#include <iostream>
 
 #include "meccanismo.h"
 #include "pistone.h"
@@ -23,11 +24,32 @@ Meccanismo* meccanismo_init(double r, double d, double bas, double q, double x, 
     c = r*cos(qr)+sqrt(pow(d,2)-pow(h,2)-2*h*r*sin(qr)-pow(r,2)*pow(sin(qr),2));
 
     // si creano le parti del meccanismo con i parametri ottenuti
-    ret->manovella = manovella_init(r,x,y,-q);
-
-    ret->biella = biella_init(d,x+r*sin(qr),y+r*cos(qr),atan2(a,b)*180/3.14-90);
-
-    ret->pistone = pist_init(bas,x-h-bas/2,y+c+bas/4);
+    try {
+        std::cout << "Creazione della struttura manovella."<< std::endl;
+        ret->manovella = manovella_init(r,x,y,-q);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->manovella = NULL;
+    };
+    
+    try {
+        std::cout << "Creazione della struttura manovella."<< std::endl;
+        ret->biella = biella_init(d,x+r*sin(qr),y+r*cos(qr),atan2(a,b)*180/3.14-90);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->manovella = NULL;
+    };
+    
+    try {
+        std::cout << "Creazione della struttura pistone."<< std::endl;
+        ret->pistone = pist_init(bas,x-h-bas/2,y+c+bas/4);
+    } catch (std::exception& ex) {
+        std::cout << "something bad happened!" << ex.what() << std::endl;
+        std::cout << "I caught the exception, will continue" << std::endl;
+        ret->pistone = NULL;
+    };
 
     return ret;
 }
