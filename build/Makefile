@@ -163,86 +163,59 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/biella.o: src/biella.cpp.o
+src/fc_scara.o: src/fc_scara.cpp.o
 
-.PHONY : src/biella.o
-
-# target to build an object file
-src/biella.cpp.o:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.o
-.PHONY : src/biella.cpp.o
-
-src/biella.i: src/biella.cpp.i
-
-.PHONY : src/biella.i
-
-# target to preprocess a source file
-src/biella.cpp.i:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.i
-.PHONY : src/biella.cpp.i
-
-src/biella.s: src/biella.cpp.s
-
-.PHONY : src/biella.s
-
-# target to generate assembly for a file
-src/biella.cpp.s:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/biella.cpp.s
-.PHONY : src/biella.cpp.s
-
-src/manovella.o: src/manovella.cpp.o
-
-.PHONY : src/manovella.o
+.PHONY : src/fc_scara.o
 
 # target to build an object file
-src/manovella.cpp.o:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.o
-.PHONY : src/manovella.cpp.o
+src/fc_scara.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_scara.cpp.o
+.PHONY : src/fc_scara.cpp.o
 
-src/manovella.i: src/manovella.cpp.i
+src/fc_scara.i: src/fc_scara.cpp.i
 
-.PHONY : src/manovella.i
+.PHONY : src/fc_scara.i
 
 # target to preprocess a source file
-src/manovella.cpp.i:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.i
-.PHONY : src/manovella.cpp.i
+src/fc_scara.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_scara.cpp.i
+.PHONY : src/fc_scara.cpp.i
 
-src/manovella.s: src/manovella.cpp.s
+src/fc_scara.s: src/fc_scara.cpp.s
 
-.PHONY : src/manovella.s
+.PHONY : src/fc_scara.s
 
 # target to generate assembly for a file
-src/manovella.cpp.s:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/manovella.cpp.s
-.PHONY : src/manovella.cpp.s
+src/fc_scara.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/fc_scara.cpp.s
+.PHONY : src/fc_scara.cpp.s
 
-src/meccanismo.o: src/meccanismo.cpp.o
+src/meccanismo_scara.o: src/meccanismo_scara.cpp.o
 
-.PHONY : src/meccanismo.o
+.PHONY : src/meccanismo_scara.o
 
 # target to build an object file
-src/meccanismo.cpp.o:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o
-.PHONY : src/meccanismo.cpp.o
+src/meccanismo_scara.cpp.o:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo_scara.cpp.o
+.PHONY : src/meccanismo_scara.cpp.o
 
-src/meccanismo.i: src/meccanismo.cpp.i
+src/meccanismo_scara.i: src/meccanismo_scara.cpp.i
 
-.PHONY : src/meccanismo.i
+.PHONY : src/meccanismo_scara.i
 
 # target to preprocess a source file
-src/meccanismo.cpp.i:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.i
-.PHONY : src/meccanismo.cpp.i
+src/meccanismo_scara.cpp.i:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo_scara.cpp.i
+.PHONY : src/meccanismo_scara.cpp.i
 
-src/meccanismo.s: src/meccanismo.cpp.s
+src/meccanismo_scara.s: src/meccanismo_scara.cpp.s
 
-.PHONY : src/meccanismo.s
+.PHONY : src/meccanismo_scara.s
 
 # target to generate assembly for a file
-src/meccanismo.cpp.s:
-	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo.cpp.s
-.PHONY : src/meccanismo.cpp.s
+src/meccanismo_scara.cpp.s:
+	$(MAKE) -f CMakeFiles/mainEntry.dir/build.make CMakeFiles/mainEntry.dir/src/meccanismo_scara.cpp.s
+.PHONY : src/meccanismo_scara.cpp.s
 
 src/pistone.o: src/pistone.cpp.o
 
@@ -311,15 +284,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/biella.o"
-	@echo "... src/biella.i"
-	@echo "... src/biella.s"
-	@echo "... src/manovella.o"
-	@echo "... src/manovella.i"
-	@echo "... src/manovella.s"
-	@echo "... src/meccanismo.o"
-	@echo "... src/meccanismo.i"
-	@echo "... src/meccanismo.s"
+	@echo "... src/fc_scara.o"
+	@echo "... src/fc_scara.i"
+	@echo "... src/fc_scara.s"
+	@echo "... src/meccanismo_scara.o"
+	@echo "... src/meccanismo_scara.i"
+	@echo "... src/meccanismo_scara.s"
 	@echo "... src/pistone.o"
 	@echo "... src/pistone.i"
 	@echo "... src/pistone.s"

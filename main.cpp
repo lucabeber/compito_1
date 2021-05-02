@@ -1,11 +1,9 @@
 #include <iostream>
 #include <cstring>
 
-#include "pistone.h"
-#include "biella.h"
+
 #include "svg.h"
-#include "manovella.h"
-#include "meccanismo.h"
+#include "meccanismo_scara.h"
 
 int main() {
     
@@ -68,7 +66,7 @@ int main() {
         } 
 
         for (int i=0; i<n; i++){
-            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,100*i+(9-n)*50,200,1);
+            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,100*i+(9-n)*50,200,0);
         } 
         mec = true;
 
@@ -120,7 +118,7 @@ int main() {
 
         p = "Sono presenti ";
 
-        found = s.find(p)+size(p);
+        found = s.find(p)+p.size();
         found2 = s.find(" ",found);
 
         new_str = s.substr(found, found2);
@@ -140,6 +138,7 @@ int main() {
             }
 
             new_str = s.substr(found, found2);
+            std::cout<<new_str;
             arr[i] = meccanismo_new(new_str.c_str());
             found = found2;
         }
@@ -167,7 +166,7 @@ int main() {
         std::cin>>angolo;
 
         meccanismo_del(arr[mod-1]);
-        arr[mod-1] = meccanismo_init(45,150,60,angolo,50+100*(mod-1),200,1);
+        arr[mod-1] = meccanismo_init(55,150,60,angolo,100*(mod-1)+(9-n)*50,200,1);
 
         std::cout<<"L'angolo e' stato modificato"<<std::endl;
         break;
