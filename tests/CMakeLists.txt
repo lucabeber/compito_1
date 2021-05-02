@@ -3,6 +3,8 @@ add_executable(catch2Test catch2Main.cpp) # Just this one contains BOOST_TEST_MA
 target_sources(catch2Test PRIVATE
         testPistone.cpp
         testBiella.cpp
+        testManovella.cpp
+        testMeccanismo.cpp
         )
 
 # Libraries used in the tests
@@ -16,6 +18,8 @@ target_include_directories(catch2Test PRIVATE
 target_sources(catch2Test PRIVATE
         ../src/pistone.cpp
         ../src/biella.cpp
+        ../src/manovella.cpp
+        ../src/meccanismo.cpp
         )
 
 #target_compile_options(catch2Test PRIVATE -Wa,-mbig-obj) # Solves assembler error of file too big

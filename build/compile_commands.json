@@ -46,6 +46,16 @@
 },
 {
   "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testManovella.cpp.o -c /home/luca/compito_1/tests/testManovella.cpp",
+  "file": "/home/luca/compito_1/tests/testManovella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testMeccanismo.cpp.o -c /home/luca/compito_1/tests/testMeccanismo.cpp",
+  "file": "/home/luca/compito_1/tests/testMeccanismo.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
   "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/pistone.cpp.o -c /home/luca/compito_1/src/pistone.cpp",
   "file": "/home/luca/compito_1/src/pistone.cpp"
 },
@@ -53,5 +63,15 @@
   "directory": "/home/luca/compito_1/build/tests",
   "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/biella.cpp.o -c /home/luca/compito_1/src/biella.cpp",
   "file": "/home/luca/compito_1/src/biella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/manovella.cpp.o -c /home/luca/compito_1/src/manovella.cpp",
+  "file": "/home/luca/compito_1/src/manovella.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/meccanismo.cpp.o -c /home/luca/compito_1/src/meccanismo.cpp",
+  "file": "/home/luca/compito_1/src/meccanismo.cpp"
 }
 ]

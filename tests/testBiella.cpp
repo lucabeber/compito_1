@@ -12,7 +12,7 @@ TEST_CASE("test sui valori e sull'altezza negativa", "[biella]") {
     REQUIRE( ret->pos.y == 30);
     REQUIRE( ret->pos.rotazione == 60);
 
-    REQUIRE_THROWS_AS( biella_init(500,30,30,60), std::invalid_argument);
+    REQUIRE_THROWS_AS( biella_init(-500,30,30,60), std::invalid_argument);
     REQUIRE_THROWS_AS( biella_init(300,-30,30,60), std::invalid_argument);
     REQUIRE_THROWS_AS( biella_init(300,30,-30,60), std::invalid_argument);
     biella_del(ret);    

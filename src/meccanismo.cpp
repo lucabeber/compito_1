@@ -39,7 +39,7 @@ Meccanismo* meccanismo_init(double r, double d, double bas, double q, double x, 
     } catch (std::exception& ex) {
         std::cout << "something bad happened!" << ex.what() << std::endl;
         std::cout << "I caught the exception, will continue" << std::endl;
-        ret->manovella = NULL;
+        ret->biella = NULL;
     };
     
     try {
@@ -76,12 +76,12 @@ Meccanismo*  meccanismo_new(std::string file){
     };
     
     try {
-        std::cout << "Creazione della struttura manovella."<< std::endl;
+        std::cout << "Creazione della struttura biella."<< std::endl;
         ret->biella = biella_new(file);
     } catch (std::exception& ex) {
         std::cout << "something bad happened!" << ex.what() << std::endl;
         std::cout << "I caught the exception, will continue" << std::endl;
-        ret->manovella = NULL;
+        ret->biella = NULL;
     };
     
     try {
