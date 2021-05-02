@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> 
+<svg xmlns="http://www.w3.org/2000/svg" width= "800" height="600" style="background-color:white" >
+<!--
+ Sono presenti 1 meccanismi
+-->
+<!--
+ Meccanismo 1
+-->
+<!--
+ 	Manovella 
+-->
+<g transform="rotate(0 400,200)" >
+<rect  x="400" y="200" width="6" height="50" style="fill:green;stroke:black;stroke-width:1" /></g>
+<!--
+ 	Pistone 
+-->
+<polygon points="369,414 429,414 429,384 420,384 420,393 378,393 378,384 369,384" style="fill:gray;stroke:black;stroke-width:1" />
+<!--
+ 	Biella 
+-->
+<g transform="rotate(0 400,250)" >
+<rect  x="400" y="250" width="15" height="150" style="fill:green;stroke:black;stroke-width:1" /></g>
+
+</svg>

@@ -2,23 +2,20 @@
 #define meccanismo_H
 
 #include "pistone.h"
-#include "biella.h"
+#include "fc_scara.h"
 #include "svg.h"
-#include "manovella.h"
+
 
 
 struct Meccanismo{
     Pistone* pistone;
-    Manovella* manovella;
-    Biella* biella;
+    fc_scara* scara;
 };
 
 
 /** Funzione che crea il meccanismo
  * 
  *  @param hman lunghezza della manovella
- * 
- *  @param hbiel lunghezza della biella
  * 
  *  @param bpist base del pistone
  * 
@@ -33,7 +30,7 @@ struct Meccanismo{
  *  @return file svg contenente l'immagine del meccanismo
  * 
  **/
-Meccanismo* meccanismo_init(double hman, double hbiel, double bpist, double angolo, double x, double y, double h);
+Meccanismo* meccanismo_init(double hman, double bpist, double angolo, double x, double y, double h);
 
 
 /**

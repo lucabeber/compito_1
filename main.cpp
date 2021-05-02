@@ -1,18 +1,16 @@
 #include <iostream>
 #include <cstring>
 
-#include "pistone.h"
-#include "biella.h"
+
 #include "svg.h"
-#include "manovella.h"
-#include "meccanismo.h"
+#include "meccanismo_scara.h"
 
 int main() {
     
-    bool cp = true, d=false, misure;         // variabili booleane che sevono per tenere conto dello stato del programma
+    bool cp = true, mec=false, misure;         // variabili booleane che sevono per tenere conto dello stato del programma
     char c;                             // variabile utilizzata per l'istruzione da attuare     
     Meccanismo** arr;                   // doppio puntatore per creazione di un array di meccanismi
-    int angolo,delta=0,n;                 // 3 variabili che si utilizzeranno per costruire il meccanismo
+    int angolo,delta=0,n, mod;                 // 3 variabili che si utilizzeranno per costruire il meccanismo
     std::string s, nomefile, p, y, new_str;      // stringhe di appoggio 
     size_t found,found2;
 
@@ -28,7 +26,7 @@ int main() {
     {
     case 'd':
         // si controlla che in memoria non sia gia presente un meccanismo 
-        if (d == true){
+        if (mec == true){
             std::cout<<"E' presente un device in memori se desideri continuare sara cancellato (Yes)"<<std::endl;
             std::cin>>p;
 
@@ -68,13 +66,15 @@ int main() {
         } 
 
         for (int i=0; i<n; i++){
-            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,50+100*i,200,1);
+            arr[i] = meccanismo_init(50,60,angolo+delta*i,100*i+(9-n)*50,200,0);
         } 
-        d = true;
+        mec = true;
+
+        std::cout<<"Il meccanismo e' stato creato"<<std::endl;
         break;
     
     case 's':
-        if (d == false){
+        if (mec == false){
             std::cout<<"Non e' presente nessun meccanismo"<<std::endl;
             break;
         }
@@ -96,7 +96,7 @@ int main() {
         } 
         delete arr;
 
-        d = false; 
+        mec = false; 
 
         s = svg(s);
 
@@ -108,7 +108,6 @@ int main() {
         s.clear();
         nomefile.clear();
 
-        
         break;
 
     case 'l':
@@ -119,7 +118,7 @@ int main() {
 
         p = "Sono presenti ";
 
-        found = s.find(p)+size(p);
+        found = s.find(p)+p.size();
         found2 = s.find(" ",found);
 
         new_str = s.substr(found, found2);
@@ -139,17 +138,44 @@ int main() {
             }
 
             new_str = s.substr(found, found2);
+            std::cout<<new_str;
             arr[i] = meccanismo_new(new_str.c_str());
             found = found2;
         }
 
-        d = true;
+        mec = true;
+
+        std::cout<<"Il file e' stato letto e la struttura creata"<<std::endl;
         break;
     
+    case 'm':
+        if (mec == false){
+            std::cout<<"Non e' presente nessun meccanismo"<<std::endl;
+            break;
+        }
+
+        std::cout<<"Quale meccanismo si vuole modificare?"<<std::endl;
+        std::cin>>mod;
+
+        if (mod <= 0 || mod > n ){
+            std::cout<<"Il meccanismo scelto non esiste"<<std::endl;
+            break;
+        }
+        
+        std::cout<<"Che angolo deve avere la manovella?"<<std::endl;
+        std::cin>>angolo;
+
+        meccanismo_del(arr[mod-1]);
+        arr[mod-1] = meccanismo_init(50,60,angolo,100*(mod-1)+(9-n)*50,200,1);
+
+        std::cout<<"L'angolo e' stato modificato"<<std::endl;
+        break;
+
     case 'i':
         std::cout<<"Creazione di un nuovo device (d)"<<std::endl;
         std::cout<<"Salvare il device che hai creato (s)"<<std::endl;
         std::cout<<"Leggere un divice da un file salvato (l)"<<std::endl;
+        std::cout<<"Modificare l'angolo di una manovella (m)"<<std::endl;
         std::cout<<"Fine del programma (f)"<<std::endl;
         break;
 

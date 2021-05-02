@@ -16,18 +16,13 @@
 },
 {
   "directory": "/home/luca/compito_1/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/biella.cpp.o -c /home/luca/compito_1/src/biella.cpp",
-  "file": "/home/luca/compito_1/src/biella.cpp"
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/meccanismo_scara.cpp.o -c /home/luca/compito_1/src/meccanismo_scara.cpp",
+  "file": "/home/luca/compito_1/src/meccanismo_scara.cpp"
 },
 {
   "directory": "/home/luca/compito_1/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/manovella.cpp.o -c /home/luca/compito_1/src/manovella.cpp",
-  "file": "/home/luca/compito_1/src/manovella.cpp"
-},
-{
-  "directory": "/home/luca/compito_1/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/meccanismo.cpp.o -c /home/luca/compito_1/src/meccanismo.cpp",
-  "file": "/home/luca/compito_1/src/meccanismo.cpp"
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/include  -g   -std=gnu++17 -o CMakeFiles/mainEntry.dir/src/fc_scara.cpp.o -c /home/luca/compito_1/src/fc_scara.cpp",
+  "file": "/home/luca/compito_1/src/fc_scara.cpp"
 },
 {
   "directory": "/home/luca/compito_1/build/tests",
@@ -41,8 +36,8 @@
 },
 {
   "directory": "/home/luca/compito_1/build/tests",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testBiella.cpp.o -c /home/luca/compito_1/tests/testBiella.cpp",
-  "file": "/home/luca/compito_1/tests/testBiella.cpp"
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/testMeccanismo.cpp.o -c /home/luca/compito_1/tests/testMeccanismo.cpp",
+  "file": "/home/luca/compito_1/tests/testMeccanismo.cpp"
 },
 {
   "directory": "/home/luca/compito_1/build/tests",
@@ -51,7 +46,17 @@
 },
 {
   "directory": "/home/luca/compito_1/build/tests",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/biella.cpp.o -c /home/luca/compito_1/src/biella.cpp",
-  "file": "/home/luca/compito_1/src/biella.cpp"
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/fc_scara.cpp.o -c /home/luca/compito_1/src/fc_scara.cpp",
+  "file": "/home/luca/compito_1/src/fc_scara.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/meccanismo_scara.cpp.o -c /home/luca/compito_1/src/meccanismo_scara.cpp",
+  "file": "/home/luca/compito_1/src/meccanismo_scara.cpp"
+},
+{
+  "directory": "/home/luca/compito_1/build/tests",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/luca/compito_1/tests/../include  -g   -std=gnu++17 -o CMakeFiles/catch2Test.dir/__/src/svg.cpp.o -c /home/luca/compito_1/src/svg.cpp",
+  "file": "/home/luca/compito_1/src/svg.cpp"
 }
 ]
