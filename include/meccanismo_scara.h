@@ -17,8 +17,6 @@ struct Meccanismo{
  * 
  *  @param hman lunghezza della manovella
  * 
- *  @param hbiel lunghezza della biella
- * 
  *  @param bpist base del pistone
  * 
  *  @param angolo angolo della manovella
@@ -32,7 +30,7 @@ struct Meccanismo{
  *  @return file svg contenente l'immagine del meccanismo
  * 
  **/
-Meccanismo* meccanismo_init(double hman, double hbiel, double bpist, double angolo, double x, double y, double h);
+Meccanismo* meccanismo_init(double hman, double bpist, double angolo, double x, double y, double h);
 
 
 /**

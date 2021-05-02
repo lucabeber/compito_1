@@ -66,7 +66,7 @@ int main() {
         } 
 
         for (int i=0; i<n; i++){
-            arr[i] = meccanismo_init(50,150,60,angolo+delta*i,100*i+(9-n)*50,200,0);
+            arr[i] = meccanismo_init(50,60,angolo+delta*i,100*i+(9-n)*50,200,0);
         } 
         mec = true;
 
@@ -166,7 +166,7 @@ int main() {
         std::cin>>angolo;
 
         meccanismo_del(arr[mod-1]);
-        arr[mod-1] = meccanismo_init(55,150,60,angolo,100*(mod-1)+(9-n)*50,200,1);
+        arr[mod-1] = meccanismo_init(50,60,angolo,100*(mod-1)+(9-n)*50,200,1);
 
         std::cout<<"L'angolo e' stato modificato"<<std::endl;
         break;

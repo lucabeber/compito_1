@@ -30,6 +30,16 @@ string
 string
 -
 
+/home/luca/compito_1/main.cpp
+iostream
+-
+cstring
+-
+svg.h
+/home/luca/compito_1/svg.h
+meccanismo_scara.h
+/home/luca/compito_1/meccanismo_scara.h
+
 /home/luca/compito_1/src/meccanismo_scara.cpp
 math.h
 -

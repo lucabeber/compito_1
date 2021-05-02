@@ -9,7 +9,7 @@
 
 TEST_CASE("test sulla correttezza dei valori in uscita dal meccanismo", "[meccanismo]") {
     
-    Meccanismo* ret = meccanismo_init(50,150,60,0,50,200,1);
+    Meccanismo* ret = meccanismo_init(50,60,0,50,200,1);
 
     REQUIRE( ret->pistone->base == 60);
     REQUIRE( ret->pistone->pos.x == 19);
@@ -26,7 +26,7 @@ TEST_CASE("test sulla correttezza dei valori in uscita dal meccanismo", "[meccan
 
 TEST_CASE("test altezza manovella e biella negativa, base pistone negativa", "[meccanismo]") {
     
-    Meccanismo* ret2 = meccanismo_init(-50,-150,-60,0,50,200,1);
+    Meccanismo* ret2 = meccanismo_init(-50,-60,0,50,200,1);
     
     REQUIRE( ret2->pistone == NULL);
 
@@ -35,8 +35,8 @@ TEST_CASE("test altezza manovella e biella negativa, base pistone negativa", "[m
 
 TEST_CASE("letteura da file", "[meccanismo]") {
     
-    std::string s = svg_read("meccanismo_test.txt");
-    std::cout<<s;
+    std::string s = svg_read("/home/luca/compito_1/build/tests/meccanismo_test.txt");
+
     Meccanismo* ret3 = meccanismo_new(s.c_str());
 
     REQUIRE( ret3->pistone->base == 60);

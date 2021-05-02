@@ -8,8 +8,9 @@
 
 
 
-Meccanismo* meccanismo_init(double r, double d, double bas, double q, double x, double y, double h){
+Meccanismo* meccanismo_init(double r, double bas, double q, double x, double y, double h){
     
+    double d = 3*r;
     
     Meccanismo* ret = new Meccanismo; 
     
